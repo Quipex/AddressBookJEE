@@ -2,5 +2,8 @@
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 
 <body:genericpage pageTitle="Home Page">
-    <h1>Welcome to awesome Address Book!</h1>
+    <div class="welcome-text-container">
+        <h1 class="display-4 text-left ma">Welcome to</h1>
+        <h1 class="display-2 text-center">Awesome Address Book!</h1>
+    </div>
 </body:genericpage>

@@ -3,6 +3,7 @@
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 
 <body:genericpage pageTitle="Updating ${requestScope.fName} ${requestScope.lName}">
+    <h1 class="mb-5">Updating information about ${requestScope.fName} ${requestScope.lName}</h1>
     <c:if test="${requestScope.errorMessage != null}">
         <div class="alert alert-danger" role="alert">
             <c:out value="${requestScope.errorMessage}"/>

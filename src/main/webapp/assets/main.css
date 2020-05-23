@@ -22,3 +22,7 @@ body > .container {
     margin-top: 20px;
     margin-bottom: 150px;
 }
+
+.welcome-text-container {
+    padding: 10rem 0;
+}

@@ -2,6 +2,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 <body:genericpage pageTitle="Create new record">
+    <h1 class="mb-5">Create new record</h1>
     <c:if test="${requestScope.errorMessage != null}">
         <div class="alert alert-danger" role="alert">
             <c:out value="${requestScope.errorMessage}"/>

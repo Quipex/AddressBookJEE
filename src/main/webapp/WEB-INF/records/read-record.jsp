@@ -3,6 +3,7 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <body:genericpage pageTitle="${requestScope.fName} ${requestScope.lName} information">
+    <h1 class="mb-5">Information about ${requestScope.fName} ${requestScope.lName}</h1>
     <c:if test="${requestScope.errorMessage != null}">
         <div class="alert alert-danger" role="alert">
             <c:out value="${requestScope.errorMessage}"/>
