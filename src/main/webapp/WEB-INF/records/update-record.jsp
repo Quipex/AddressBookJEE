@@ -11,13 +11,13 @@
             <tr>
                 <td><label for="firstName">First Name:</label></td>
                 <td>
-                    <input type="text" id="firstName" name="fName" value="${requestScope.fName}" readonly="readonly">
+                    <input type="text" id="firstName" name="first-name" value="${requestScope.fName}" readonly="readonly">
                 </td>
             </tr>
             <tr>
                 <td><label for="lastName">Last Name:</label></td>
                 <td>
-                    <input type="text" id="lastName" name="lName" value="${requestScope.lName}" readonly="readonly">
+                    <input type="text" id="lastName" name="first-name" value="${requestScope.lName}" readonly="readonly">
                 </td>
             </tr>
             <tr>

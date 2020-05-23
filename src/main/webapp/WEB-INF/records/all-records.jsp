@@ -28,13 +28,13 @@
                         ${AddressBookExtractor.getAddr(record)}
                 </td>
                 <td>
-                    <a href="/records/read?fName=${AddressBookExtractor.getFName(record)}&lName=${AddressBookExtractor.getLName(record)}">Read</a>
+                    <a href="/records/read?first-name=${AddressBookExtractor.getFName(record)}&last-name=${AddressBookExtractor.getLName(record)}">Read</a>
                 </td>
                 <td>
-                    <a href="/records/update?fName=${AddressBookExtractor.getFName(record)}&lName=${AddressBookExtractor.getLName(record)}">Edit</a>
+                    <a href="/records/update?first-name=${AddressBookExtractor.getFName(record)}&last-name=${AddressBookExtractor.getLName(record)}">Edit</a>
                 </td>
                 <td>
-                    <a href="/records/delete?fName=${AddressBookExtractor.getFName(record)}&lName=${AddressBookExtractor.getLName(record)}">Delete</a>
+                    <a href="/records/delete?first-name=${AddressBookExtractor.getFName(record)}&last-name=${AddressBookExtractor.getLName(record)}">Delete</a>
                 </td>
             </tr>
         </c:forEach>

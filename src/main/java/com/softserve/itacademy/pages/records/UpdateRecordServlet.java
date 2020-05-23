@@ -21,8 +21,8 @@ public class UpdateRecordServlet extends HttpServlet {
 	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		String fName = req.getParameter("fName");
-		String lName = req.getParameter("lName");
+		String fName = req.getParameter("first-name");
+		String lName = req.getParameter("last-name");
 		String address = addressBook.read(fName, lName);
 		if (address != null) {
 			req.setAttribute("fName", fName);
@@ -36,11 +36,11 @@ public class UpdateRecordServlet extends HttpServlet {
 	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String fName = request.getParameter("fName");
-		String lName = request.getParameter("lName");
+		String fName = request.getParameter("first-name");
+		String lName = request.getParameter("last-name");
 		String address = request.getParameter("address");
 		if (addressBook.update(fName, lName, address)) {
-			response.sendRedirect("/records/read?fName=" + fName + "&lName=" + lName);
+			response.sendRedirect("/records/read?first-name=" + fName + "&last-name=" + lName);
 		} else {
 			request.setAttribute("error", "Error occured, please try again");
 		}

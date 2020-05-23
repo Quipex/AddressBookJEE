@@ -20,13 +20,14 @@ public class CreateRecordServlet extends HttpServlet {
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		String firstName = request.getParameter("firstName");
-		String lastName = request.getParameter("lastName");
+		String firstName = request.getParameter("first-name");
+		String lastName = request.getParameter("last-name");
 		String address = request.getParameter("address");
 		if (addressBook.create(firstName, lastName, address)) {
 			response.sendRedirect("/records/list");
 		} else {
-			ErrorHandler.errorPage(request, response, 409, "Given person already exists!");
+			request.setAttribute("errorMessage", "Error. Given person already exists!");
+			doGet(request, response);
 		}
 	}
 	

@@ -3,27 +3,27 @@
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 <body:genericpage pageTitle="Create new record">
     <c:if test="${requestScope.errorMessage != null}">
-        <h2>
+        <h3 class="error-message">
             <c:out value="${requestScope.errorMessage}"/>
-        </h2>
+        </h3>
     </c:if>
     <form action="/records/create" method="post">
         <table class="record">
             <tr>
                 <td><label for="firstName">First Name:</label></td>
-                <td><input type="text" id="firstName" name="firstName"></td>
+                <td><input type="text" id="firstName" name="first-name"></td>
             </tr>
             <tr>
                 <td><label for="lastName">Last Name:</label></td>
-                <td><input type="text" id="lastName" name="lastName"></td>
+                <td><input type="text" id="lastName" name="last-name"></td>
             </tr>
             <tr>
                 <td><label for="address">Address:</label></td>
                 <td><textarea name="address" id="address"></textarea></td>
             </tr>
             <tr>
-                <td><input type="submit"></td>
-                <td><input type="reset"></td>
+                <td><input type="submit" value="Create"></td>
+                <td><input type="reset" value="Clear"></td>
             </tr>
         </table>
     </form>

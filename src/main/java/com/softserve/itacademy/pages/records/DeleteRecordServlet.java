@@ -20,8 +20,8 @@ public class DeleteRecordServlet extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
-		String firstName = request.getParameter("fName");
-		String lastName = request.getParameter("lName");
+		String firstName = request.getParameter("first-name");
+		String lastName = request.getParameter("last-name");
 		if (addressBook.delete(firstName, lastName)) {
 			response.sendRedirect("/records/list");
 		} else {

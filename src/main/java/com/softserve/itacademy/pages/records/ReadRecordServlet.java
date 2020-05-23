@@ -20,8 +20,8 @@ public class ReadRecordServlet extends HttpServlet {
 	}
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String fName = request.getParameter("fName");
-		String lName = request.getParameter("lName");
+		String fName = request.getParameter("first-name");
+		String lName = request.getParameter("last-name");
 		String address = addressBook.read(fName, lName);
 		if (address != null) {
 			request.setAttribute("fName", fName);
