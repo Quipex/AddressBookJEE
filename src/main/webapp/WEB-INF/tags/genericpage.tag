@@ -3,7 +3,7 @@
 <%@attribute name="pageTitle" required="true" %>
 <html>
 <head>
-    <link rel="stylesheet" href="<c:url value="/assets/styles.css"/>">
+    <link rel="stylesheet" href="<c:url value="/assets/main.css"/>">
     <link rel="icon" href="<c:url value="/assets/favicon512.png"/>" type="image/png">
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">

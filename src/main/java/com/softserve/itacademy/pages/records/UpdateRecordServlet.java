@@ -20,6 +20,19 @@ public class UpdateRecordServlet extends HttpServlet {
 	}
 	
 	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+		String fName = request.getParameter("first-name");
+		String lName = request.getParameter("last-name");
+		String address = request.getParameter("address");
+		if (addressBook.update(fName, lName, address)) {
+			response.sendRedirect("/records/read?first-name=" + fName + "&last-name=" + lName);
+		} else {
+			request.setAttribute("errorMessage", "Error occured, please try again");
+			doGet(request, response);
+		}
+	}
+	
+	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		String fName = req.getParameter("first-name");
 		String lName = req.getParameter("last-name");
@@ -31,18 +44,6 @@ public class UpdateRecordServlet extends HttpServlet {
 			req.getRequestDispatcher("/WEB-INF/records/update-record.jsp").forward(req, resp);
 		} else {
 			ErrorHandler.errorPage(req, resp, 404, "Person not found");
-		}
-	}
-	
-	@Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String fName = request.getParameter("first-name");
-		String lName = request.getParameter("last-name");
-		String address = request.getParameter("address");
-		if (addressBook.update(fName, lName, address)) {
-			response.sendRedirect("/records/read?first-name=" + fName + "&last-name=" + lName);
-		} else {
-			request.setAttribute("error", "Error occured, please try again");
 		}
 	}
 }

@@ -3,28 +3,24 @@
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 <body:genericpage pageTitle="Create new record">
     <c:if test="${requestScope.errorMessage != null}">
-        <h3 class="error-message">
+        <div class="alert alert-danger" role="alert">
             <c:out value="${requestScope.errorMessage}"/>
-        </h3>
+        </div>
     </c:if>
     <form action="/records/create" method="post">
-        <table class="record">
-            <tr>
-                <td><label for="firstName">First Name:</label></td>
-                <td><input type="text" id="firstName" name="first-name"></td>
-            </tr>
-            <tr>
-                <td><label for="lastName">Last Name:</label></td>
-                <td><input type="text" id="lastName" name="last-name"></td>
-            </tr>
-            <tr>
-                <td><label for="address">Address:</label></td>
-                <td><textarea name="address" id="address"></textarea></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Create"></td>
-                <td><input type="reset" value="Clear"></td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" type="text" id="firstName" name="first-name">
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" type="text" id="lastName" name="last-name">
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" name="address" id="address"></textarea>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Create">
+        <input class="btn btn-secondary" type="reset" value="Clear">
     </form>
 </body:genericpage>

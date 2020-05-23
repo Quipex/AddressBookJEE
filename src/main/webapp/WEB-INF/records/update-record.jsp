@@ -3,31 +3,27 @@
 <%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
 
 <body:genericpage pageTitle="Updating ${requestScope.fName} ${requestScope.lName}">
-    <c:if test="${requestScope.error != null}">
-        <c:out value="${requestScope.error}"/>
+    <c:if test="${requestScope.errorMessage != null}">
+        <div class="alert alert-danger" role="alert">
+            <c:out value="${requestScope.errorMessage}"/>
+        </div>
     </c:if>
     <form action="/records/update" method="post">
-        <table class="record">
-            <tr>
-                <td><label for="firstName">First Name:</label></td>
-                <td>
-                    <input type="text" id="firstName" name="first-name" value="${requestScope.fName}" readonly="readonly">
-                </td>
-            </tr>
-            <tr>
-                <td><label for="lastName">Last Name:</label></td>
-                <td>
-                    <input type="text" id="lastName" name="first-name" value="${requestScope.lName}" readonly="readonly">
-                </td>
-            </tr>
-            <tr>
-                <td><label for="address">Address:</label></td>
-                <td><textarea name="address" id="address">${requestScope.address}</textarea></td>
-            </tr>
-            <tr>
-                <td><input type="submit" value="Update"></td>
-                <td><input type="reset" value="Reset"></td>
-            </tr>
-        </table>
+        <div class="form-group">
+            <label for="firstName">First Name:</label>
+            <input class="form-control" type="text" id="firstName" name="first-name" value="${requestScope.fName}"
+                   readonly>
+        </div>
+        <div class="form-group">
+            <label for="lastName">Last Name:</label>
+            <input class="form-control" type="text" id="lastName" name="last-name" value="${requestScope.lName}"
+                   readonly>
+        </div>
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <textarea class="form-control" name="address" id="address">${requestScope.address}</textarea>
+        </div>
+        <input class="btn btn-primary" type="submit" value="Update">
+        <input class="btn btn-secondary" type="reset" value="Reset">
     </form>
 </body:genericpage>
