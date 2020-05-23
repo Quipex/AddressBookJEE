@@ -27,6 +27,7 @@ public class CreateRecordServlet extends HttpServlet {
 			response.sendRedirect("/records/list");
 		} else {
 			request.setAttribute("errorMessage", "Error. Given person already exists!");
+			response.setStatus(409);
 			doGet(request, response);
 		}
 	}
