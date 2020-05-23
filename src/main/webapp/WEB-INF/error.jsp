@@ -1,0 +1,13 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="body" tagdir="/WEB-INF/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<body:genericpage pageTitle="${requestScope.errorCode} error">
+    <div class="errorBlock">
+        <h1 class="error">
+            <c:out value="${requestScope.errorCode}"/>
+        </h1>
+        <h2 class="error">
+            <c:out value="${requestScope.errorMessage}"/>
+        </h2>
+    </div>
+</body:genericpage>
