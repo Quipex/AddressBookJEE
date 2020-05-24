@@ -1,6 +1,6 @@
 # A test project for messing around with JSP
 
-Built with JSP and JSTL (a bit of ```<%@include >``` scriplets 'cause i'm lazy to rework them 😅)
+Built with JSP and JSTL (a bit of ```<%@include >``` scriplets 'cause i'm too lazy to rework them 😅)
 
 ## Visuals:
 
